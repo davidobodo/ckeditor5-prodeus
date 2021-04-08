@@ -25,6 +25,9 @@ import ImageStyle from "./plugins/ckeditor5-image/src/imagestyle";
 import ImageToolbar from "./plugins/ckeditor5-image/src/imagetoolbar";
 import ImageUpload from "./plugins/ckeditor5-image/src/imageupload";
 
+//Video
+import MediaEmbed from "./plugins/ckeditor5-media-embed/src/mediaembed";
+
 import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
 import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
@@ -33,7 +36,6 @@ import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
 import EasyImage from "@ckeditor/ckeditor5-easy-image/src/easyimage";
 import Heading from "@ckeditor/ckeditor5-heading/src/heading";
 import Indent from "@ckeditor/ckeditor5-indent/src/indent";
-import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed";
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
 import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
