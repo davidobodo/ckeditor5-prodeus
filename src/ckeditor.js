@@ -4,32 +4,19 @@
  */
 
 // The editor creator to use.
-import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 
-import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
-import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
-import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat";
 
 import Bold from "./plugins/ckeditor5-basic-styles/src/bold";
 import Italic from "./plugins/ckeditor5-basic-styles/src/italic";
 import StrikeThrough from "./plugins/ckeditor5-basic-styles/src/strikethrough";
 import Superscript from "./plugins/ckeditor5-basic-styles/src/superscript";
 import InlineCode from "./plugins/ckeditor5-basic-styles/src/code";
-
 import Link from "./plugins/ckeditor5-link/src/link";
-
 import List from "./plugins/ckeditor5-list/src/list";
-
 import BlockQuote from "./plugins/ckeditor5-block-quote/src/blockquote";
-
 import CodeBlock from "./plugins/ckeditor5-code-block/src/codeblock";
-
 import Table from "./plugins/ckeditor5-table/src/table";
 import TableToolbar from "./plugins/ckeditor5-table/src/tabletoolbar";
-
-import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
-import EasyImage from "@ckeditor/ckeditor5-easy-image/src/easyimage";
-import Heading from "@ckeditor/ckeditor5-heading/src/heading";
 
 //Image
 import Image from "./plugins/ckeditor5-image/src/image";
@@ -38,13 +25,17 @@ import ImageStyle from "./plugins/ckeditor5-image/src/imagestyle";
 import ImageToolbar from "./plugins/ckeditor5-image/src/imagetoolbar";
 import ImageUpload from "./plugins/ckeditor5-image/src/imageupload";
 
+import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
+import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
+import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
+import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat";
+import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
+import EasyImage from "@ckeditor/ckeditor5-easy-image/src/easyimage";
+import Heading from "@ckeditor/ckeditor5-heading/src/heading";
 import Indent from "@ckeditor/ckeditor5-indent/src/indent";
-
 import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed";
-
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
 import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice";
-
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
 import CloudServices from "@ckeditor/ckeditor5-cloud-services/src/cloudservices";
 

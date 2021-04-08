@@ -10,6 +10,7 @@
 import { Plugin, icons } from 'ckeditor5/src/core';
 import { FileDialogButtonView } from 'ckeditor5/src/upload';
 import { createImageTypeRegExp } from './utils';
+import imageLogo from '../../theme/icons/image_logo.svg'
 
 /**
  * The image upload button plugin.
@@ -48,7 +49,7 @@ export default class ImageUploadUI extends Plugin {
 
 			view.buttonView.set( {
 				label: t( 'Insert image' ),
-				icon: icons.image,
+				icon: imageLogo,
 				tooltip: true
 			} );
 

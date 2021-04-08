@@ -15,6 +15,8 @@ import ImageInsertFormRowView from './imageinsertformrowview';
 
 import '../../../theme/imageinsert.css';
 
+import imageLogo from '../../../theme/icons/image_logo.svg'
+
 /**
  * The insert an image via URL view controller class.
  *
@@ -229,7 +231,7 @@ export default class ImageInsertPanelView extends View {
 
 		splitButtonView.set( {
 			label: t( 'Insert image' ),
-			icon: icons.image,
+			icon: imageLogo,
 			tooltip: true
 		} );
 
