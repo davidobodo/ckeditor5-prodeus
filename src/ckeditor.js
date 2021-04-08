@@ -6,6 +6,7 @@
 // The editor creator to use.
 
 import Bold from "./plugins/ckeditor5-basic-styles/src/bold";
+import CustomHeader from "./plugins/ckeditor5-basic-styles/src/customheader";
 import Italic from "./plugins/ckeditor5-basic-styles/src/italic";
 import StrikeThrough from "./plugins/ckeditor5-basic-styles/src/strikethrough";
 import Superscript from "./plugins/ckeditor5-basic-styles/src/superscript";
@@ -76,13 +77,14 @@ ClassicEditor.builtinPlugins = [
     StrikeThrough,
     Superscript,
     InlineCode,
-    CodeBlock
+    CodeBlock,
+    CustomHeader
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
     toolbar: {
-        items: ["bold", "italic", "link", "strikethrough", "code", "superscript", "|", "heading", "bulletedList", "numberedList", "blockQuote", "codeBlock", "insertTable", "uploadImage"]
+        items: ["bold", "italic", "link", "strikethrough", "code", "superscript", "|", "heading", "bulletedList", "numberedList", "blockQuote", "codeBlock", "insertTable", "uploadImage", 'customheader']
     },
     image: {
         toolbar: ["imageStyle:full", "imageStyle:side", "|", "imageTextAlternative"]
