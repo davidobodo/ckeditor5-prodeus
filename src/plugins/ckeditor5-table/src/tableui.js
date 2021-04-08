@@ -8,7 +8,7 @@
  */
 
 import { Plugin } from 'ckeditor5/src/core';
-import { addListToDropdown, createDropdown, Model, SplitButtonView } from 'ckeditor5/src/ui';
+import { addListToDropdown, createDropdown, Model, SplitButtonView, ButtonView } from 'ckeditor5/src/ui';
 import { Collection } from 'ckeditor5/src/utils';
 
 import InsertTableView from './ui/inserttableview';
@@ -48,44 +48,69 @@ export default class TableUI extends Plugin {
 		const isContentLtr = contentLanguageDirection === 'ltr';
 
 		editor.ui.componentFactory.add( 'insertTable', locale => {
+			// const command = editor.commands.get( 'insertTable' );
+			// const dropdownView = createDropdown( locale );
+
+			// dropdownView.bind( 'isEnabled' ).to( command );
+
+			// // Decorate dropdown's button.
+			// dropdownView.buttonView.set( {
+			// 	icon: tableIcon,
+			// 	label: t( 'Insert table' ),
+			// 	tooltip: true
+			// } );
+
+			// let insertTableView;
+
+			// dropdownView.on( 'change:isOpen', () => {
+			// 	if ( insertTableView ) {
+			// 		return;
+			// 	}
+
+			// 	// Prepare custom view for dropdown's panel.
+			// 	insertTableView = new InsertTableView( locale );
+
+			// 	dropdownView.panelView.children.add( insertTableView );
+
+			// 	insertTableView.delegate( 'execute' ).to( dropdownView );
+
+			// 	dropdownView.buttonView.on( 'open', () => {
+			// 		// Reset the chooser before showing it to the user.
+			// 		// insertTableView.rows = 0;
+			// 		// insertTableView.columns = 0;
+			// 		insertTableView.rows = 3;
+			// 		insertTableView.columns = 3;
+			// 	} );
+
+			// 	dropdownView.on( 'execute', () => {
+			// 		editor.execute( 'insertTable', { rows: insertTableView.rows, columns: insertTableView.columns } );
+			// 		editor.editing.view.focus();
+			// 	} );
+			// } );
+
+			// return dropdownView
+
+			//--------------------------------------------
+			//Display Code block as just a button as opposed to the dropdown above
+			// --------------------------------------------
 			const command = editor.commands.get( 'insertTable' );
-			const dropdownView = createDropdown( locale );
-
-			dropdownView.bind( 'isEnabled' ).to( command );
-
-			// Decorate dropdown's button.
-			dropdownView.buttonView.set( {
-				icon: tableIcon,
+			const buttonView = new ButtonView(locale)
+			buttonView.set( {
 				label: t( 'Insert table' ),
-				tooltip: true
+				tooltip: true,
+				icon: tableIcon,
+			} );
+			// Bind button model to command.
+			buttonView.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
+		
+			// Execute command.
+			this.listenTo( buttonView, 'execute', () => {
+
+				editor.execute( 'insertTable', { rows: 3, columns: 3} );
+				editor.editing.view.focus();
 			} );
 
-			let insertTableView;
-
-			dropdownView.on( 'change:isOpen', () => {
-				if ( insertTableView ) {
-					return;
-				}
-
-				// Prepare custom view for dropdown's panel.
-				insertTableView = new InsertTableView( locale );
-				dropdownView.panelView.children.add( insertTableView );
-
-				insertTableView.delegate( 'execute' ).to( dropdownView );
-
-				dropdownView.buttonView.on( 'open', () => {
-					// Reset the chooser before showing it to the user.
-					insertTableView.rows = 0;
-					insertTableView.columns = 0;
-				} );
-
-				dropdownView.on( 'execute', () => {
-					editor.execute( 'insertTable', { rows: insertTableView.rows, columns: insertTableView.columns } );
-					editor.editing.view.focus();
-				} );
-			} );
-
-			return dropdownView;
+			return buttonView;
 		} );
 
 		editor.ui.componentFactory.add( 'tableColumn', locale => {
