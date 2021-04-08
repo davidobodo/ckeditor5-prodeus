@@ -36,5 +36,6 @@
 	&[data-language]::after {
 		content: attr(data-language);
 		position: absolute;
+		display: none;
 	}
 }

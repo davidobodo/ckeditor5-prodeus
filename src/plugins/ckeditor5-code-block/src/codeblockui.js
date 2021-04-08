@@ -9,7 +9,7 @@
 
 import { Plugin } from 'ckeditor5/src/core';
 import { Collection } from 'ckeditor5/src/utils';
-import { Model, SplitButtonView, createDropdown, addListToDropdown } from 'ckeditor5/src/ui';
+import { Model, SplitButtonView, createDropdown, addListToDropdown , ButtonView} from 'ckeditor5/src/ui';
 
 import { getNormalizedAndLocalizedLanguageDefinitions } from './utils';
 
@@ -50,7 +50,7 @@ export default class CodeBlockUI extends Plugin {
 				label: t( 'Insert code block' ),
 				tooltip: true,
 				icon: codeBlockIcon,
-				// isToggleable: true
+				isToggleable: true
 			} );
 
 			splitButtonView.bind( 'isOn' ).to( command, 'value', value => !!value );
@@ -77,7 +77,25 @@ export default class CodeBlockUI extends Plugin {
 
 			addListToDropdown( dropdownView, this._getLanguageListItemDefinitions( normalizedLanguageDefs ) );
 
-			return dropdownView;
+			//--------------------------------------------
+			//Display Code block as just a button as opposed to the dropdown above
+			//--------------------------------------------
+			const buttonView = new ButtonView(locale)
+			buttonView.set( {
+				label: t( 'Insert code block' ),
+				tooltip: true,
+				icon: codeBlockIcon,
+				isToggleable: true
+			} );
+			// Bind button model to command.
+			buttonView.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
+			// Execute command.
+			this.listenTo( buttonView, 'execute', () => {
+				editor.execute( 'codeBlock' );
+				editor.editing.view.focus();
+			} );
+
+			return buttonView;
 		} );
 	}
 
