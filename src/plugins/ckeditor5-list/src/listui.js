@@ -9,7 +9,7 @@
 
 import { createUIComponent } from './utils';
 
-import numberedListIcon from '../theme/icons/numberedlist.svg';
+import prodeusNumberedListIcon from '../theme/icons/numberedlist.svg';
 import bulletedListIcon from '../theme/icons/bulletedlist.svg';
 
 import { Plugin } from 'ckeditor5/src/core';
@@ -35,7 +35,7 @@ export default class ListUI extends Plugin {
 		const t = this.editor.t;
 
 		// Create two buttons and link them with numberedList and bulletedList commands.
-		createUIComponent( this.editor, 'numberedList', t( 'Numbered List' ), numberedListIcon );
+		createUIComponent( this.editor, 'numberedList', t( 'Numbered List' ), prodeusNumberedListIcon );
 		createUIComponent( this.editor, 'bulletedList', t( 'Bulleted List' ), bulletedListIcon );
 	}
 }
