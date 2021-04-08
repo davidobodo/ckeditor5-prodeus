@@ -5,7 +5,6 @@
 
 // The editor creator to use.
 
-
 import Bold from "./plugins/ckeditor5-basic-styles/src/bold";
 import Italic from "./plugins/ckeditor5-basic-styles/src/italic";
 import StrikeThrough from "./plugins/ckeditor5-basic-styles/src/strikethrough";
@@ -14,7 +13,11 @@ import InlineCode from "./plugins/ckeditor5-basic-styles/src/code";
 import Link from "./plugins/ckeditor5-link/src/link";
 import List from "./plugins/ckeditor5-list/src/list";
 import BlockQuote from "./plugins/ckeditor5-block-quote/src/blockquote";
+
+//Code Block
 import CodeBlock from "./plugins/ckeditor5-code-block/src/codeblock";
+
+//Table
 import Table from "./plugins/ckeditor5-table/src/table";
 import TableToolbar from "./plugins/ckeditor5-table/src/tabletoolbar";
 
@@ -86,6 +89,9 @@ ClassicEditor.defaultConfig = {
     },
     table: {
         contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"]
+    },
+    codeBlock: {
+        languages: [{ language: "plaintext", label: "Plain text", class: "" }]
     },
     // This value must be kept in sync with the language defined in webpack.config.js.
     language: "en"

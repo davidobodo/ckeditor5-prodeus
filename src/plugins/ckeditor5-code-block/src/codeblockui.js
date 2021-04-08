@@ -50,7 +50,7 @@ export default class CodeBlockUI extends Plugin {
 				label: t( 'Insert code block' ),
 				tooltip: true,
 				icon: codeBlockIcon,
-				isToggleable: true
+				// isToggleable: true
 			} );
 
 			splitButtonView.bind( 'isOn' ).to( command, 'value', value => !!value );
