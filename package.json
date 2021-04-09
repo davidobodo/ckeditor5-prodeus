@@ -27,7 +27,6 @@
     "dependencies": {
         "@ckeditor/ckeditor5-adapter-ckfinder": "^26.0.0",
         "@ckeditor/ckeditor5-autoformat": "^26.0.0",
-        "@ckeditor/ckeditor5-basic-styles": "^26.0.0",
         "@ckeditor/ckeditor5-block-quote": "^26.0.0",
         "@ckeditor/ckeditor5-ckfinder": "^26.0.0",
         "@ckeditor/ckeditor5-cloud-services": "^26.0.0",
@@ -35,14 +34,11 @@
         "@ckeditor/ckeditor5-editor-classic": "^26.0.0",
         "@ckeditor/ckeditor5-essentials": "^26.0.0",
         "@ckeditor/ckeditor5-heading": "^26.0.0",
-        "@ckeditor/ckeditor5-image": "^26.0.0",
         "@ckeditor/ckeditor5-indent": "^26.0.0",
         "@ckeditor/ckeditor5-link": "^26.0.0",
         "@ckeditor/ckeditor5-list": "^26.0.0",
-        "@ckeditor/ckeditor5-media-embed": "^26.0.0",
         "@ckeditor/ckeditor5-paragraph": "^26.0.0",
         "@ckeditor/ckeditor5-paste-from-office": "^26.0.0",
-        "@ckeditor/ckeditor5-table": "^26.0.0",
         "@ckeditor/ckeditor5-typing": "^26.0.0"
     },
     "devDependencies": {

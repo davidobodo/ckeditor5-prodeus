@@ -4,6 +4,7 @@
  */
 
 // The editor creator to use.
+import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 
 import Bold from "./plugins/ckeditor5-basic-styles/src/bold";
 import CustomHeader from "./plugins/ckeditor5-basic-styles/src/customheader";
@@ -29,10 +30,6 @@ import ImageStyle from "./plugins/ckeditor5-image/src/imagestyle";
 import ImageToolbar from "./plugins/ckeditor5-image/src/imagetoolbar";
 import ImageUpload from "./plugins/ckeditor5-image/src/imageupload";
 
-//Video
-import MediaEmbed from "./plugins/ckeditor5-media-embed/src/mediaembed";
-
-import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
 import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
 import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat";
@@ -67,7 +64,6 @@ ClassicEditor.builtinPlugins = [
     Indent,
     Link,
     List,
-    MediaEmbed,
     Paragraph,
     PasteFromOffice,
     Table,
