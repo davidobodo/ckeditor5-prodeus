@@ -7,10 +7,10 @@
  * @module basic-styles/bold/boldediting
  */
 
-import { Plugin } from 'ckeditor5/src/core';
-import AttributeCommand from '../attributecommand';
+import { Plugin } from "ckeditor5/src/core";
+import AttributeCommand from "../attributecommand";
 
-const CUSTOMHEADER = 'customheader';
+const CUSTOMHEADER = "customheader";
 
 /**
  * The bold editing feature.
@@ -21,53 +21,42 @@ const CUSTOMHEADER = 'customheader';
  * @extends module:core/plugin~Plugin
  */
 export default class CustomHeaderEditing extends Plugin {
-	/**
-	 * @inheritDoc
-	 */
-	static get pluginName() {
-		return 'CustomHeaderEditing';
-	}
+    /**
+     * @inheritDoc
+     */
+    static get pluginName() {
+        return "CustomHeaderEditing";
+    }
 
-	/**
-	 * @inheritDoc
-	 */
-	init() {
-		const editor = this.editor;
-		// Allow bold attribute on text nodes.
-		editor.model.schema.extend( '$text', { allowAttributes: CUSTOMHEADER } );
-		editor.model.schema.setAttributeProperties( CUSTOMHEADER, {
-			isFormatting: true,
-			copyOnEnter: true
-		} );
+    /**
+     * @inheritDoc
+     */
+    init() {
+        const editor = this.editor;
+        // Allow bold attribute on text nodes.
+        editor.model.schema.extend("$text", { allowAttributes: CUSTOMHEADER });
+        editor.model.schema.setAttributeProperties(CUSTOMHEADER, {
+            isFormatting: true,
+            copyOnEnter: true
+        });
 
-		// Build converter from model to view for data and editing pipelines.
-		editor.conversion.attributeToElement( {
-			model: CUSTOMHEADER,
-			view: 'h2',
-			upcastAlso: [
-				'b',
-				viewElement => {
-					const fontSize = viewElement.getStyle( 'font-size' );
+        // Build converter from model to view for data and editing pipelines.
+        editor.conversion.attributeToElement({
+            model: CUSTOMHEADER,
+            view: "h2",
+            upcastAlso: [
+                {
+                    styles: {
+                        "font-size": "24px"
+                    }
+                }
+            ]
+        });
 
-					if ( !fontSize ) {
-						return null;
-					}
+        // Create bold command.
+        editor.commands.add(CUSTOMHEADER, new AttributeCommand(editor, CUSTOMHEADER));
 
-					// Value of the `font-weight` attribute can be defined as a string or a number.
-					if ( fontSize == '30px' ) {
-						return {
-							name: true,
-							styles: [ 'font-size' ]
-						};
-					}
-				}
-			]
-		} );
-
-		// Create bold command.
-		editor.commands.add( CUSTOMHEADER, new AttributeCommand( editor, CUSTOMHEADER ) );
-
-		// Set the Ctrl+B keystroke.
-		// editor.keystrokes.set( 'CTRL+B', CUSTOMHEADER );
-	}
+        // Set the Ctrl+B keystroke.
+        // editor.keystrokes.set( 'CTRL+B', CUSTOMHEADER );
+    }
 }

@@ -7,12 +7,12 @@
  * @module basic-styles/bold/boldui
  */
 
-import { Plugin } from 'ckeditor5/src/core';
-import { ButtonView } from 'ckeditor5/src/ui';
+import { Plugin } from "ckeditor5/src/core";
+import { ButtonView } from "ckeditor5/src/ui";
 
-import boldIcon from '../../theme/icons/bold.svg';
+import customHeaderIcon from "../../theme/icons/customHeader.svg";
 
-const CUSTOMHEADER = 'customheader';
+const CUSTOMHEADER = "customheader";
 
 /**
  * The bold UI feature. It introduces the Bold button.
@@ -20,42 +20,42 @@ const CUSTOMHEADER = 'customheader';
  * @extends module:core/plugin~Plugin
  */
 export default class CustomHeaderUI extends Plugin {
-	/**
-	 * @inheritDoc
-	 */
-	static get pluginName() {
-		return 'CustomHeaderUI';
-	}
+    /**
+     * @inheritDoc
+     */
+    static get pluginName() {
+        return "CustomHeaderUI";
+    }
 
-	/**
-	 * @inheritDoc
-	 */
-	init() {
-		const editor = this.editor;
-		const t = editor.t;
+    /**
+     * @inheritDoc
+     */
+    init() {
+        const editor = this.editor;
+        const t = editor.t;
 
-		// Add bold button to feature components.
-		editor.ui.componentFactory.add( CUSTOMHEADER, locale => {
-			const command = editor.commands.get( CUSTOMHEADER );
-			const view = new ButtonView( locale );
+        // Add bold button to feature components.
+        editor.ui.componentFactory.add(CUSTOMHEADER, (locale) => {
+            const command = editor.commands.get(CUSTOMHEADER);
+            const view = new ButtonView(locale);
 
-			view.set( {
-				label: t( 'Heading' ),
-				icon: boldIcon,
-				// keystroke: 'CTRL+B',
-				tooltip: true,
-				isToggleable: true
-			} );
+            view.set({
+                label: t("Heading"),
+                icon: customHeaderIcon,
+                // keystroke: 'CTRL+B',
+                tooltip: true,
+                isToggleable: true
+            });
 
-			view.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
+            view.bind("isOn", "isEnabled").to(command, "value", "isEnabled");
 
-			// Execute command.
-			this.listenTo( view, 'execute', () => {
-				editor.execute( CUSTOMHEADER );
-				editor.editing.view.focus();
-			} );
+            // Execute command.
+            this.listenTo(view, "execute", () => {
+                editor.execute(CUSTOMHEADER);
+                editor.editing.view.focus();
+            });
 
-			return view;
-		} );
-	}
+            return view;
+        });
+    }
 }

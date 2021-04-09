@@ -84,7 +84,7 @@ ClassicEditor.builtinPlugins = [
 // Editor configuration.
 ClassicEditor.defaultConfig = {
     toolbar: {
-        items: ["bold", "italic", "link", "strikethrough", "code", "superscript", "|", "heading", "bulletedList", "numberedList", "blockQuote", "codeBlock", "insertTable", "uploadImage", 'customheader']
+        items: ["bold", "italic", "link", "strikethrough", "code", "superscript", "|", "customheader", "bulletedList", "numberedList", "blockQuote", "codeBlock", "insertTable", "uploadImage"]
     },
     image: {
         toolbar: ["imageStyle:full", "imageStyle:side", "|", "imageTextAlternative"]
