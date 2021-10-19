@@ -2,6 +2,10 @@
     "name": "prodeus-editor",
     "version": "2.0.0",
     "description": "The Prodeus editor build of CKEditor 5 – the best browser-based rich text editor.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/obododavid/ckeditor5-prodeus"
+    },
     "keywords": [
         "prodeus",
         "ckeditor5-build",
