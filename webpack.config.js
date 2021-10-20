@@ -12,13 +12,15 @@ const webpack = require("webpack");
 const { bundler, styles } = require("@ckeditor/ckeditor5-dev-utils");
 const CKEditorWebpackPlugin = require("@ckeditor/ckeditor5-dev-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
     devtool: "source-map",
     performance: { hints: false },
 
-    entry: path.resolve(__dirname, "src", "ckeditor.js"),
+    // entry: path.resolve(__dirname, "src", "ckeditor.js"),
+    entry: "./src/ckeditor.js",
 
     output: {
         // The name under which the editor will be exported.
@@ -61,7 +63,8 @@ module.exports = {
             raw: true
         }),
         new HtmlWebpackPlugin({
-            title: "Development"
+            title: "Development",
+            template: "./sample/index.html"
         })
     ],
 

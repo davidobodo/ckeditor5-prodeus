@@ -80,7 +80,22 @@ ClassicEditor.builtinPlugins = [
 // Editor configuration.
 ClassicEditor.defaultConfig = {
     toolbar: {
-        items: ["bold", "italic", "link", "strikethrough", "code", "superscript", "|", "customheader", "bulletedList", "numberedList", "blockQuote", "codeBlock", "insertTable", "uploadImage"]
+        items: [
+            "bold",
+            "italic",
+            "link",
+            "strikethrough",
+            "code",
+            "superscript",
+            "|",
+            "customheader",
+            "bulletedList",
+            "numberedList"
+            // "blockQuote",
+            // "codeBlock",
+            // "insertTable",
+            // "uploadImage"
+        ]
     },
     image: {
         toolbar: ["imageStyle:full", "imageStyle:side", "|", "imageTextAlternative"]
@@ -94,3 +109,11 @@ ClassicEditor.defaultConfig = {
     // This value must be kept in sync with the language defined in webpack.config.js.
     language: "en"
 };
+
+ClassicEditor.create(document.querySelector("#editor"))
+    .then((editor) => {
+        window.editor = editor;
+    })
+    .catch((error) => {
+        console.error("There was a problem initializing the editor.", error);
+    });

@@ -45,7 +45,7 @@
         "@ckeditor/ckeditor5-paragraph": "^26.0.0",
         "@ckeditor/ckeditor5-paste-from-office": "^26.0.0",
         "@ckeditor/ckeditor5-typing": "^26.0.0",
-        "html-webpack-plugin": "^5.4.0",
+        "html-webpack-plugin": "^4.0.0-alpha",
         "webpack-cli": "^4.9.1"
     },
     "devDependencies": {
