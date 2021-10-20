@@ -15,6 +15,7 @@ import InlineCode from "./plugins/ckeditor5-basic-styles/src/code";
 import Link from "./plugins/ckeditor5-link/src/link";
 import List from "./plugins/ckeditor5-list/src/list";
 import BlockQuote from "./plugins/ckeditor5-block-quote/src/blockquote";
+import CustomImageUploader from "./plugins/customImageUploader/customImageUploader";
 
 //Code Block
 import CodeBlock from "./plugins/ckeditor5-code-block/src/codeblock";
@@ -74,7 +75,8 @@ ClassicEditor.builtinPlugins = [
     Superscript,
     InlineCode,
     CodeBlock,
-    CustomHeader
+    CustomHeader,
+    CustomImageUploader
 ];
 
 // Editor configuration.
@@ -90,11 +92,11 @@ ClassicEditor.defaultConfig = {
             "|",
             "customheader",
             "bulletedList",
-            "numberedList"
-            // "blockQuote",
-            // "codeBlock",
-            // "insertTable",
-            // "uploadImage"
+            "numberedList",
+            "blockQuote",
+            "codeBlock",
+            "insertTable",
+            "uploadImage"
         ]
     },
     image: {
