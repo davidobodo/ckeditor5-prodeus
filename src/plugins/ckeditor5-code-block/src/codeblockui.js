@@ -77,6 +77,9 @@ export default class CodeBlockUI extends Plugin {
 
 			addListToDropdown( dropdownView, this._getLanguageListItemDefinitions( normalizedLanguageDefs ) );
 
+
+			return dropdownView;
+
 			//--------------------------------------------
 			//Display Code block as just a button as opposed to the dropdown above
 			//--------------------------------------------

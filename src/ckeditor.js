@@ -80,7 +80,22 @@ ClassicEditor.builtinPlugins = [
 // Editor configuration.
 ClassicEditor.defaultConfig = {
     toolbar: {
-        items: ["bold", "italic", "link", "strikethrough", "code", "superscript", "|", "customheader", "bulletedList", "numberedList", "blockQuote", "codeBlock", "insertTable", "uploadImage"]
+        items: [
+            "bold",
+            "italic",
+            "link",
+            "strikethrough",
+            "code",
+            "superscript",
+            "|",
+            "customheader",
+            "bulletedList",
+            "numberedList",
+            "blockQuote",
+            "codeBlock",
+            "insertTable",
+            "uploadImage"
+        ]
     },
     image: {
         toolbar: ["imageStyle:full", "imageStyle:side", "|", "imageTextAlternative"]
@@ -88,9 +103,9 @@ ClassicEditor.defaultConfig = {
     table: {
         contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"]
     },
-    codeBlock: {
-        languages: [{ language: "plaintext", label: "Plain text", class: "" }]
-    },
+    // codeBlock: {
+    //     languages: [{ language: "plaintext", label: "Plain text", class: "" }]
+    // },
     // This value must be kept in sync with the language defined in webpack.config.js.
     language: "en"
 };
