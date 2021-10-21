@@ -15,6 +15,7 @@ import InlineCode from "./plugins/ckeditor5-basic-styles/src/code";
 import Link from "./plugins/ckeditor5-link/src/link";
 import List from "./plugins/ckeditor5-list/src/list";
 import BlockQuote from "./plugins/ckeditor5-block-quote/src/blockquote";
+import RemoveFormat from "./plugins/ckeditor5-remove-format/src/removeformat";
 
 //Code Block
 import CodeBlock from "./plugins/ckeditor5-code-block/src/codeblock";
@@ -41,6 +42,14 @@ import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
 import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
 import CloudServices from "@ckeditor/ckeditor5-cloud-services/src/cloudservices";
+
+// A simple plugin that extends the remove format feature to consider links.
+function RemoveFormatLinks(editor) {
+    // Extend the editor schema and mark the "linkHref" model attribute as formatting.
+    editor.model.schema.setAttributeProperties("linkHref", {
+        isFormatting: true
+    });
+}
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -69,6 +78,8 @@ ClassicEditor.builtinPlugins = [
     Table,
     TableToolbar,
     TextTransformation,
+    RemoveFormat,
+    RemoveFormatLinks,
 
     StrikeThrough,
     Superscript,
@@ -94,7 +105,8 @@ ClassicEditor.defaultConfig = {
             "blockQuote",
             "codeBlock",
             "insertTable",
-            "uploadImage"
+            "uploadImage",
+            "removeFormat"
         ]
     },
     image: {
